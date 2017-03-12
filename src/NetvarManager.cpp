@@ -16,6 +16,7 @@ void Netvars::Init()
 	int x = 0;
 
 	while (clientClass)
+	{
 		if(!clientClass)
 			continue;
 
@@ -24,6 +25,7 @@ void Netvars::Init()
 
 		clientClass = clientClass->m_pNext;
 		x++;
+	}
 }
 
 int Netvars::GetNetvar(const char* dt, const char* m)
