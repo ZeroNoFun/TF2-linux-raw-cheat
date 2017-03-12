@@ -1,0 +1,25 @@
+[IVEngineClient]
+5 =  virtual void GetScreenSize(int& iWidth, int& iHeight)
+12 = virtual int GetLocalPlayer() = 0
+19 = virtual void GetViewAngles( Vector& ang ) = 0
+20 = virtual void SetViewAngles( Vector& ang ) = 0
+21 = virtual int GetMaxClients() = 0
+36 = virtual const matrix3x4& WorldToScreenMatrix() = 0
+
+[ISurface]
+10 = virtual void DrawSetColor(int r, int g, int b, int a) = 0
+11 = virtual void DrawSetColor(Color clr) = 0
+12 = virtual void DrawFilledRect(int x, int y, int w, int h) = 0
+14 = virtual void DrawOutlinedRect(int x, int y, int w, int h) = 0
+
+[IVPanel]
+37 = virtual const char *GetName(unsigned int vguiPanel) = 0
+
+[IBaseClientDLL]
+8 = virtual ClientClass *GetAllClasses() = 0
+
+[IEntityList]
+3 = virtual void *GetClientEntity(int index) = 0
+
+[IClientEntity]
+11 = virtual Vector& GetAbsOrigin() = 0

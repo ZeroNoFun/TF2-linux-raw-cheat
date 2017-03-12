@@ -1,0 +1,6 @@
+Util.o: Util.cpp sdk.hpp ifs.hpp AltVMT.hpp
+Drawings.o: Drawings.cpp sdk.hpp ifs.hpp AltVMT.hpp
+NetvarManager.o: NetvarManager.cpp sdk.hpp ifs.hpp AltVMT.hpp
+main.o: main.cpp sdk.hpp ifs.hpp AltVMT.hpp
+Hooks.o: Hooks.cpp sdk.hpp ifs.hpp AltVMT.hpp
+Interfaces.o: Interfaces.cpp sdk.hpp ifs.hpp AltVMT.hpp

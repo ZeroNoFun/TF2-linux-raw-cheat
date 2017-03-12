@@ -1,0 +1,40 @@
+#!/usr/bin/python3
+
+from sys import argv, stdout, stderr, exit
+import configparser
+
+def begin_class(class_name):
+	stdout.write("class" + " " + class_name + "\n")
+	stdout.write("{\n")
+	stdout.write("public:\n")
+
+def end_class():
+	stdout.write("};\n")
+	stdout.write("\n")
+
+config = configparser.ConfigParser()
+config.read('ifs.in')
+
+stdout.write("""
+class Vector;
+class Color;
+class VPANEL;
+class ClientClass;
+typedef float matrix3x4[3][4];
+
+""")
+
+
+for section in config.sections():
+	known = dict()
+	max_known = 0
+	begin_class(section)
+	for key in config[section]:
+		known[int(key)] = config[section][key]
+		max_known = max(max_known, int(key))
+	for x in range(max_known + 1):
+		if x not in known:
+			known[x] =  "virtual void _pad_{}() = 0".format(x)
+
+		stdout.write("	" +known[x] + ";\n")
+	end_class()
