@@ -17,3 +17,4 @@ make clean
 make depend
 make
 ```
+File called Zand.so - cheat, load it via any injector
